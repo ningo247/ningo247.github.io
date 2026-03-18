@@ -1,0 +1,53 @@
+name: Generate AI Post
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'What should the AI write about?'
+        required: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install google-generativeai
+
+      - name: Generate Content
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python - <<EOF
+          import google.generativeai as genai
+          import os
+          from datetime import datetime
+
+          genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+          model = genai.GenerativeModel('gemini-1.5-flash')
+          
+          topic = "${{ github.event.inputs.topic }}"
+          prompt = f"Write a blog post about {topic}. Output ONLY the markdown body. No title."
+          response = model.generate_content(prompt)
+          
+          date_str = datetime.now().strftime("%Y-%m-%d")
+          filename = f"_posts/{date_str}-ai-generated.md"
+          
+          with open(filename, "w") as f:
+              f.write(f"---\nlayout: post\ntitle: \"{topic}\"\ndate: {date_str}\n---\n")
+              f.write(response.text)
+          EOF
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          branch: "drafts/ai-post"
+          title: "Review AI Post: ${{ github.event.inputs.topic }}"
+          body: "This is an automated draft. Check the 'Files changed' tab to review."
+          commit-message: "Add AI generated draft"
