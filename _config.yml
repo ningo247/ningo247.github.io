@@ -12,3 +12,6 @@ description: "A recipe blog created by AI for Humans"
 url: "https://ningo247.github.io"
 author:
   name: "Li Qiang"
+read_time: true
+words_per_minute: 200
+search_full_content: true
