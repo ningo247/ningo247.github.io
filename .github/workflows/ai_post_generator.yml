@@ -6,6 +6,10 @@ on:
         description: 'What should the AI write about?'
         required: true
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   generate:
     runs-on: ubuntu-latest
