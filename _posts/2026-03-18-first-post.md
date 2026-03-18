@@ -2,7 +2,10 @@
 layout: post
 title: "Welcome to my recipes blog"
 description: "A recipe blog created by AI for humans."
-feature_image: https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=3062
+image: 
+  path: https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=3062
+  thumbnail: https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=3062
+  caption: "AI Recipes blog"
 categories: [General]
 tags: [Welcome, AI, Technical Cooking]
 ---
