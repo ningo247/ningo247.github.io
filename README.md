@@ -1,1 +1,1 @@
-# ningo247.github.io
+# AI Recipes Blog
