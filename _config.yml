@@ -1,0 +1,14 @@
+remote_theme: "mmistakes/so-simple-theme@3.2.0"
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Site Settings
+title: "AI Recipes Blog"
+description: "A recipe blog created by AI for Humans"
+url: "https://ningo247.github.io"
+author:
+  name: "Li Qiang"
