@@ -1,57 +1,62 @@
-name: Generate AI Post
-on:
-  workflow_dispatch:
-    inputs:
-      topic:
-        description: 'What should the AI write about?'
-        required: true
-
-permissions:
-  contents: write
-  pull-requests: write
-
-jobs:
-  generate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Dependencies
-        run: pip install google-generativeai
-
-      - name: Generate Content
+- name: Generate Content
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python - <<EOF
           import google.generativeai as genai
           import os
+          import json
           from datetime import datetime
+          import urllib.parse
 
           genai.configure(api_key=os.environ["GEMINI_API_KEY"])
           model = genai.GenerativeModel('gemini-flash-latest')
           
           topic = "${{ github.event.inputs.topic }}"
-          prompt = f"Write a blog post about {topic}. Output ONLY the markdown body. No title."
-          response = model.generate_content(prompt)
-          
-          date_str = datetime.now().strftime("%Y-%m-%d")
-          filename = f"_posts/{date_str}-ai-generated.md"
-          
-          with open(filename, "w") as f:
-              f.write(f"---\nlayout: post\ntitle: \"{topic}\"\ndate: {date_str}\n---\n")
-              f.write(response.text)
-          EOF
+          prompt = f"""
+          Write a blog post about {topic}. 
+          Return the result in JSON format with these exact keys:
+          - title: A catchy title
+          - description: A one-sentence SEO description
+          - categories: An array containing ['Recipes']
+          - tags: An array of 3-5 relevant lowercase tags
+          - image_keyword: A single 1-word keyword for a cover photo
+          - content: The full markdown body of the post.
+          """
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          branch: "drafts/ai-post"
-          title: "Review AI Post: ${{ github.event.inputs.topic }}"
-          body: "This is an automated draft. Check the 'Files changed' tab to review."
-          commit-message: "Add AI generated draft"
+          try:
+              response = model.generate_content(
+                  prompt, 
+                  generation_config={"response_mime_type": "application/json"}
+              )
+              data = json.loads(response.text)
+              
+              date_str = datetime.now().strftime("%Y-%m-%d")
+              filename = f"_posts/{date_str}-ai-generated.md"
+              
+              # Using the keyword to get a relevant Unsplash image
+              img_kw = data.get('image_keyword', 'cooking')
+              img_url = f"https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=80&q={img_kw}"
+
+              frontmatter = (
+                  "---\n"
+                  "layout: post\n"
+                  f"date: {date_str}\n"
+                  f"title: \"{data['title']}\"\n"
+                  f"description: \"{data['description']}\"\n"
+                  "image:\n"
+                  f"  path: {img_url}\n"
+                  f"  thumbnail: {img_url}\n"
+                  f"categories: {data['categories']}\n"
+                  f"tags: {data['tags']}\n"
+                  "---\n\n"
+                  f"{data['content']}"
+              )
+
+              with open(filename, "w") as f:
+                  f.write(frontmatter)
+                  
+          except Exception as e:
+              print(f"Error: {e}")
+              exit(1)
+          EOF
