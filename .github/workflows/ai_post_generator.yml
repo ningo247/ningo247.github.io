@@ -33,7 +33,9 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          branch: "drafts/ai-post"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main  # <--- ADD THIS LINE
+          branch: "drafts/ai-post" # This is the "temporary" branch for the PR
           title: "Review AI Post: ${{ github.event.inputs.topic }}"
           commit-message: "New AI draft generated"
           body: "Review the new post in the Files changed tab."
