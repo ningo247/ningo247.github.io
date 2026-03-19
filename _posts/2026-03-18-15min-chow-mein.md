@@ -4,8 +4,8 @@ date: 2026-03-18
 title: "Chow Mein Noodles"
 description: "A 15min simple and delicious chow mein recipe"
 image: 
-  path: https://images.unsplash.com/flagged/photo-1556742524-750f2ab99913?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
-  thumbnail: https://images.unsplash.com/flagged/photo-1556742524-750f2ab99913?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
+  path: https://images.unsplash.com/flagged/photo-1556742524-750f2ab99913?auto=format&fit=crop&w=1200&q=80&q=noodles
+  thumbnail: https://images.unsplash.com/flagged/photo-1556742524-750f2ab99913?auto=format&fit=crop&w=1200&q=80&q=noodles
   # caption: "AI Recipes blog"
 categories: [General]
 tags: [Welcome, AI, Technical Cooking]
