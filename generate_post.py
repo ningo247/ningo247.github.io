@@ -4,6 +4,11 @@ import json
 import sys
 from datetime import datetime
 import urllib.parse
+import re
+
+def slugify(text):
+    text = text.lower()
+    return re.sub(r'[^a-z0-9]+', '-', text).strip('-')
 
 def main():
     api_key = os.environ.get("GEMINI_API_KEY")
@@ -35,10 +40,16 @@ def main():
         data = json.loads(response.text)
         
         date_str = datetime.now().strftime("%Y-%m-%d")
-        filename = f"_posts/{date_str}-ai-generated.md"
-        
+        # filename = f"_posts/{date_str}-ai-generated.md"
+            
+        slug = slugify(data['title'])
+        filename = f"_posts/{date_str}-{slug}.md"
+
         img_kw = data.get('image_keyword', 'cooking')
         img_url = f"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q={img_kw}"
+
+        excerpt = data['content'][:150] + "..."
+        # Add f"excerpt: \"{excerpt}\"" to your frontmatter string
 
         frontmatter = (
             "---\n"
@@ -46,6 +57,7 @@ def main():
             f"date: {date_str}\n"
             f"title: \"{data['title']}\"\n"
             f"description: \"{data['description']}\"\n"
+            f"excerpt: \"{excerpt}\""
             "image:\n"
             f"  path: {img_url}\n"
             f"  thumbnail: {img_url}\n"
