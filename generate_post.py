@@ -57,7 +57,7 @@ def main():
             f"date: {date_str}\n"
             f"title: \"{data['title']}\"\n"
             f"description: \"{data['description']}\"\n"
-            f"excerpt: \"{excerpt}\""
+            f"excerpt: \"{excerpt}\"\n"
             "image:\n"
             f"  path: {img_url}\n"
             f"  thumbnail: {img_url}\n"
