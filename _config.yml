@@ -12,6 +12,11 @@ description: "A recipe blog created by AI for Humans"
 url: "https://ningo247.github.io"
 author:
   name: "Li Qiang"
+google_fonts:
+  - name: "Source Sans Pro"
+    weights: "400,400i,700,700i"
+  - name: "Lora"
+    weights: "400,400i,700,700i"
 read_time: true
 words_per_minute: 200
 search_full_content: true
