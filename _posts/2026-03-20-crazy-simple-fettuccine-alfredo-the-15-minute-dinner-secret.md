@@ -7,7 +7,7 @@ categories: ['Recipes']
 tags: ['pasta', 'dinner', 'quick', 'alfredo']
 ---
 
-<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&h=400&q=80&q=pasta" class="align-right" alt="Crazy Simple Fettuccine Alfredo: The 15-Minute Dinner Secret photo">
+<img src="https://images.unsplash.com/photo-1612732399402-19d1f386c7ec?q=80&w=3130&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="align-right" alt="Crazy Simple Fettuccine Alfredo: The 15-Minute Dinner Secret photo">
 
 # Crazy Simple Fettuccine Alfredo
 
