@@ -2,7 +2,6 @@
 layout: post
 date: 2026-03-18
 title: "Chow Mein Noodles"
-thumbnail: https://images.unsplash.com/photo-1587029622793-f51e81058f2d?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D
 description: "A 15min simple and delicious chow mein recipe"
 # image: 
 #   path: https://images.unsplash.com/flagged/photo-1556742524-750f2ab99913?auto=format&fit=crop&w=1200&q=80&q=noodles
@@ -11,7 +10,7 @@ description: "A 15min simple and delicious chow mein recipe"
 categories: [General]
 tags: [Welcome, AI, Technical Cooking]
 ---
-
+<img src="https://images.unsplash.com/photo-1587029622793-f51e81058f2d?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="align-right" alt="">
 When the craving for Chinese takeout hits, you don’t need to reach for your phone—you just need 15 minutes and a few pantry staples. This Chow Mein recipe is faster than delivery, significantly healthier, and packed with that savory, umami flavor we all love.
 
 The secret to making this in record time? Pre-shredded vegetables and a foolproof sauce that balances salty, sweet, and nutty notes perfectly.
