@@ -50,18 +50,13 @@ def main():
         # img_kw = data.get('image_keyword', 'cooking')
         # img_url = f"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&h=400&q=80&q={img_kw}"
         
-        # 1. Get the primary keyword from the AI (e.g., 'fettuccini')
-        # We'll use the first tag or the image_keyword the AI already generates
-        primary_keyword = data.get('image_keyword', 'cooking')
+        img_kw = data.get('image_keyword', 'cooking')
+        # We use a timestamp to 'bust' the cache and get a new image each time
+        sig = int(datetime.now().timestamp())
 
-        # 2. Build the dynamic search URL
-        # This URL forces a 16:9 crop and searches for the specific recipe keyword
-        # img_url = f"https://source.unsplash.com/featured/1200x600?{urllib.parse.quote(primary_keyword)}"
-
-        # NOTE: If source.unsplash.com is inconsistent in your region, 
-        # use this more robust version:
-        img_url = f"https://images.unsplash.com/photo-1?auto=format&fit=crop&w=1200&h=600&q=80&sig={datetime.now().timestamp()}&{urllib.parse.quote(primary_keyword)}"
-
+        # This is the 2026 'hack' for dynamic Unsplash images:
+        img_url = f"https://images.unsplash.com/photo-1?auto=format&fit=crop&w=1200&h=600&q=80&sig={sig}&{urllib.parse.quote(img_kw)}"
+        
         # 2. Build the Clean Frontmatter (No more 'image:' key here)
         frontmatter = (
             "---\n"
