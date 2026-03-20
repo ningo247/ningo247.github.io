@@ -6,13 +6,13 @@ description: "Make a delicious and authentic chow mein at home in just 15 minute
 excerpt: "# 15-Minute Better-Than-Takeout Chow Mein
 
 When you're craving Chinese food but don't want to wait for delivery, this 15-minute chow mein is your best..."
-image:
-  path: https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q=noodles
-  thumbnail: https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q=noodles
+# image:
+#   path: https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q=noodles
+#   thumbnail: https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q=noodles
 categories: ['Recipes']
 tags: ['chowmein', 'noodles', 'stirfry', 'quickdinner']
 ---
-
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q=noodles" class="align-right" alt="">
 # 15-Minute Better-Than-Takeout Chow Mein
 
 When you're craving Chinese food but don't want to wait for delivery, this 15-minute chow mein is your best friend. It’s savory, packed with crunchy vegetables, and uses simple ingredients you likely already have in your pantry.
