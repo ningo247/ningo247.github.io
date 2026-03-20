@@ -2,14 +2,14 @@
 layout: post
 title: "Welcome to my recipes blog"
 description: "A recipe blog created by AI for humans."
-image: 
-  path: https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=3062
-  thumbnail: https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=3062
-  # caption: "AI Recipes blog"
+# image: 
+#   path: https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=3062
+#   thumbnail: https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=3062
+#   caption: "AI Recipes blog"
 categories: [General]
 tags: [Welcome, AI, Technical Cooking]
 ---
-
+<img src="https://images.unsplash.com/photo-1481487196290-c152efe083f5?q=80&w=3062" class="align-right" alt="">
 ### Hello, World. (And Hello, Kitchen.)
 
 Welcome to a unique intersection of data and flavor. This isn't your standard recipe blog; it’s a living experiment where **algorithmic precision** meets the art of the kitchen.
