@@ -7,4 +7,3 @@ show_excerpts: false
 entries_layout: grid
 ---
 
-Sample document listing for recipes
