@@ -45,30 +45,30 @@ def main():
         slug = slugify(data['title'])
         filename = f"_posts/{date_str}-{slug}.md"
 
+       # 1. Define the image URL (using the fixed 16:9 ratio we discussed)
         img_kw = data.get('image_keyword', 'cooking')
-        img_url = f"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q={img_kw}"
+        img_url = f"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&h=400&q=80&q={img_kw}"
 
-        excerpt = data['content'][:150] + "..."
-        # Add f"excerpt: \"{excerpt}\"" to your frontmatter string
-
+        # 2. Build the Clean Frontmatter (No more 'image:' key here)
         frontmatter = (
             "---\n"
             "layout: post\n"
             f"date: {date_str}\n"
             f"title: \"{data['title']}\"\n"
             f"description: \"{data['description']}\"\n"
-            f"excerpt: \"{excerpt}\"\n"
-            "image:\n"
-            f"  path: {img_url}\n"
-            f"  thumbnail: {img_url}\n"
             f"categories: {data['categories']}\n"
             f"tags: {data['tags']}\n"
             "---\n\n"
-            f"{data['content']}"
         )
 
+        # 3. Inject the Image at the start of the Content
+        # We use the 'align-right' class for that nice wrap-around effect
+        image_html = f'<img src="{img_url}" class="align-right" alt="{data["title"]} photo">\n\n'
+        
+        full_body = frontmatter + image_html + data['content']
+
         with open(filename, "w") as f:
-            f.write(frontmatter)
+            f.write(full_body)
         print(f"Successfully created {filename}")
             
     except Exception as e:
