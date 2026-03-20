@@ -3,9 +3,9 @@ layout: post
 date: 2026-03-19
 title: "Mastering the Sirloin: A Guide to the Perfect Weeknight Steak"
 description: "Learn how to cook a juicy, flavorful sirloin steak perfectly every time with our simple searing and butter-basting method."
-excerpt: "# Mastering the Sirloin: A Guide to the Perfect Weeknight Steak
-
-Sirloin steak is the unsung hero of the butcher counter. It is leaner than a ribeye, ..."
+# excerpt: "# Mastering the Sirloin: A Guide to the Perfect Weeknight Steak
+# 
+# Sirloin steak is the unsung hero of the butcher counter. It is leaner than a ribeye, ..."
 # image:
 #   path: https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q=steak
 #   thumbnail: https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q=steak
