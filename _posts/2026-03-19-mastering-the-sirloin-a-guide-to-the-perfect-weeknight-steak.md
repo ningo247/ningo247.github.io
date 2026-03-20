@@ -12,7 +12,7 @@ description: "Learn how to cook a juicy, flavorful sirloin steak perfectly every
 categories: ['Recipes']
 tags: ['beef', 'steak', 'sirloin', 'cooking']
 ---
-<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80&q=steak" class="align-right" alt="">
+<img src="https://images.unsplash.com/photo-1623241899289-e9a64b02150d?q=80&w=2621&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="align-right" alt="">
 # Mastering the Sirloin: A Guide to the Perfect Weeknight Steak
 
 Sirloin steak is the unsung hero of the butcher counter. It is leaner than a ribeye, more flavorful than a filet mignon, and significantly more affordable than both. Whether you are planning a casual Tuesday dinner or a weekend BBQ, the sirloin is a versatile cut that delivers every time.
