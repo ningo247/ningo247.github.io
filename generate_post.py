@@ -28,7 +28,8 @@ def main():
     - description: A one-sentence SEO description
     - categories: ['Recipes']
     - tags: 3-5 relevant lowercase tags
-    - image_keyword: A single 1-word keyword for a photo (e.g. 'pasta', 'grill')
+    - image_keyword: A single, highly-specific food keyword for an image search 
+      (e.g., if the recipe is Fettuccini Alfredo, use 'fettuccini' or 'alfredo', not just 'food').
     - content: The full markdown body of the post.
     """
 
@@ -46,8 +47,20 @@ def main():
         filename = f"_posts/{date_str}-{slug}.md"
 
        # 1. Define the image URL (using the fixed 16:9 ratio we discussed)
-        img_kw = data.get('image_keyword', 'cooking')
-        img_url = f"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&h=400&q=80&q={img_kw}"
+        # img_kw = data.get('image_keyword', 'cooking')
+        # img_url = f"https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&h=400&q=80&q={img_kw}"
+        
+        # 1. Get the primary keyword from the AI (e.g., 'fettuccini')
+        # We'll use the first tag or the image_keyword the AI already generates
+        primary_keyword = data.get('image_keyword', 'cooking')
+
+        # 2. Build the dynamic search URL
+        # This URL forces a 16:9 crop and searches for the specific recipe keyword
+        # img_url = f"https://source.unsplash.com/featured/1200x600?{urllib.parse.quote(primary_keyword)}"
+
+        # NOTE: If source.unsplash.com is inconsistent in your region, 
+        # use this more robust version:
+        img_url = f"https://images.unsplash.com/photo-1?auto=format&fit=crop&w=1200&h=600&q=80&sig={datetime.now().timestamp()}&{urllib.parse.quote(primary_keyword)}"
 
         # 2. Build the Clean Frontmatter (No more 'image:' key here)
         frontmatter = (
