@@ -1,8 +1,9 @@
 ---
 title: Recipes
 layout: collection
-permalink: /posts/
+permalink: /recipes/
 collection: posts
+show_excerpts: false
 entries_layout: grid
 ---
 
