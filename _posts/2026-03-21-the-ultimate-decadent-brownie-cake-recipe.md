@@ -7,7 +7,7 @@ categories: ['Recipes']
 tags: ['brownies', 'chocolate', 'dessert', 'baking']
 ---
 
-<img src="https://images.unsplash.com/photo-1?auto=format&fit=crop&w=1200&h=600&q=80&sig=1774053253.580721&brownie" class="align-right" alt="The Ultimate Decadent Brownie Cake Recipe photo">
+<img src="https://images.unsplash.com/photo-1636743715220-d8f8dd900b87?auto=format&fit=crop&w=1200&h=600&q=80&sig=1774053253.580721&brownie" class="align-right" alt="The Ultimate Decadent Brownie Cake Recipe photo">
 
 # The Ultimate Decadent Brownie Cake
 
