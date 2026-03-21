@@ -9,7 +9,7 @@ plugins:
 # Site Settings
 title: "AI Recipes Blog"
 description: "A recipe blog created by AI for Humans"
-url: "https://ningo247.github.io"
+url: "https://fastidious-moonbeam-867f95.netlify.app/"
 author:
   name: "Li Qiang"
 google_fonts:
